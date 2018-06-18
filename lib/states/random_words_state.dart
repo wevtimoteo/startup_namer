@@ -20,7 +20,10 @@ class RandomWordsState extends State<RandomWords> {
             new ListTile(
               leading: Icon(Icons.favorite),
               title: new Text('Favorites'),
-              onTap: _pushSaved,
+              onTap: () {
+                Navigator.pop(context);
+                _pushSaved();
+              },
             ),
             new Divider(),
           ],
