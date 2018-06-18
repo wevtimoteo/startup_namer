@@ -13,9 +13,18 @@ class RandomWordsState extends State<RandomWords> {
     return new Scaffold(
       appBar: new AppBar(
         title: new Text('Startup Name Generator'),
-        actions: <Widget>[
-          new IconButton(icon: new Icon(Icons.list), onPressed: _pushSaved),
-        ],
+      ),
+      drawer: new Drawer(
+        child: new ListView(
+          children: <Widget> [
+            new ListTile(
+              leading: Icon(Icons.favorite),
+              title: new Text('Favorites'),
+              onTap: _pushSaved,
+            ),
+            new Divider(),
+          ],
+        ),
       ),
       body: _buildSuggestions(),
     );
